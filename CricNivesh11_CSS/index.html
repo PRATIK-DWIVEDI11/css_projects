@@ -1,0 +1,1795 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CricNivesh11 - Your Ultimate Cricket Companion</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <!-- Logo -->
+          <div class="logo-section">
+            <div class="logo">C11</div>
+            <span class="site-name">CricNivesh11</span>
+          </div>
+
+          <!-- Navigation -->
+          <nav class="nav-tabs">
+            <a href="#" class="nav-tab active" onclick="showTab('home')"
+              >Home</a
+            >
+            <a href="#" class="nav-tab" onclick="showTab('auction')">Auction</a>
+            <a href="#" class="nav-tab" onclick="showTab('fixtures')"
+              >Fixtures</a
+            >
+            <a href="#" class="nav-tab" onclick="showTab('blogs')">Blogs</a>
+            <a href="#" class="nav-tab" onclick="showTab('profile')">Profile</a>
+          </nav>
+
+          <!-- Login Button -->
+          <button class="login-btn">Login</button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav">
+          <a href="#" class="nav-tab active" onclick="showTab('home')">Home</a>
+          <a href="#" class="nav-tab" onclick="showTab('auction')">Auction</a>
+          <a href="#" class="nav-tab" onclick="showTab('fixtures')">Fixtures</a>
+          <a href="#" class="nav-tab" onclick="showTab('blogs')">Blogs</a>
+          <a href="#" class="nav-tab" onclick="showTab('profile')">Profile</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Home Tab -->
+    <div id="home" class="tab-content active">
+      <div class="container">
+        <main class="main-content">
+          <!-- Hero Section -->
+          <section class="hero">
+            <h1>Welcome to <span class="brand">CricNivesh11</span></h1>
+            <p>
+              Your ultimate destination for live cricket scores, fantasy
+              leagues, and comprehensive match analysis
+            </p>
+          </section>
+
+          <!-- Live Matches Section -->
+          <section class="section">
+            <div class="section-header">
+              <div class="pulse-dot"></div>
+              <h2 class="section-title">Live Matches</h2>
+            </div>
+
+            <div class="grid grid-2">
+              <!-- Match 1 -->
+              <div class="card match-card">
+                <div class="match-header">
+                  <h3 class="match-title">IND vs AUS - 1st Test</h3>
+                  <div>
+                    <span class="live-badge">LIVE</span>
+                  </div>
+                </div>
+
+                <div class="team-row">
+                  <span class="team-flag">🇮🇳</span>
+                  <div class="team-info">
+                    <div class="team-name">India</div>
+                    <div class="team-overs">(78.2 ov)</div>
+                  </div>
+                  <div class="team-score">285/4</div>
+                </div>
+
+                <div class="team-row">
+                  <span class="team-flag">🇦🇺</span>
+                  <div class="team-info">
+                    <div class="team-name">Australia</div>
+                    <div class="team-overs">(65.4 ov)</div>
+                  </div>
+                  <div class="team-score">195</div>
+                </div>
+
+                <div class="stats">
+                  <div class="stat-item">
+                    <div class="stat-label">CRR</div>
+                    <div class="stat-value">3.65</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-label">RRR</div>
+                    <div class="stat-value crr">4.2</div>
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    margin-top: 16px;
+                    padding-top: 16px;
+                    border-top: 1px solid rgb(31, 41, 55);
+                  "
+                >
+                  <div style="color: #cccccc; font-size: 14px">
+                    IND leads by 90 runs
+                  </div>
+                </div>
+              </div>
+
+              <!-- Match 2 -->
+              <div class="card match-card">
+                <div class="match-header">
+                  <h3 class="match-title">ENG vs PAK - T20I</h3>
+                  <div>
+                    <span class="live-badge">LIVE</span>
+                  </div>
+                </div>
+
+                <div class="team-row">
+                  <span class="team-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+                  <div class="team-info">
+                    <div class="team-name">England</div>
+                    <div class="team-overs">(20.0 ov)</div>
+                  </div>
+                  <div class="team-score">156/7</div>
+                </div>
+
+                <div class="team-row">
+                  <span class="team-flag">🇵🇰</span>
+                  <div class="team-info">
+                    <div class="team-name">Pakistan</div>
+                    <div class="team-overs">(15.3 ov)</div>
+                  </div>
+                  <div class="team-score">124/5</div>
+                </div>
+
+                <div class="stats">
+                  <div class="stat-item">
+                    <div class="stat-label">CRR</div>
+                    <div class="stat-value">8.0</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-label">RRR</div>
+                    <div class="stat-value crr">9.8</div>
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    margin-top: 16px;
+                    padding-top: 16px;
+                    border-top: 1px solid rgb(31, 41, 55);
+                  "
+                >
+                  <div style="color: #cccccc; font-size: 14px">
+                    PAK needs 33 runs in 27 balls
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Featured News Section -->
+          <section class="section">
+            <div class="section-header">
+              <h2 class="section-title">Featured News</h2>
+              <div
+                style="flex: 1; height: 1px; background-color: rgb(31, 41, 55)"
+              ></div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 32px">
+              <!-- News 1 -->
+              <div class="card news-card">
+                <div class="news-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=600&h=400&fit=crop"
+                    alt="Cricket news"
+                  />
+                </div>
+                <div class="news-content">
+                  <div class="news-meta">
+                    <span class="news-category">MATCH REPORT</span>
+                    <span class="news-time">5 min read</span>
+                  </div>
+                  <h3 class="news-title">
+                    Kohli's Masterclass: A Century to Remember Against Australia
+                  </h3>
+                  <p class="news-summary">
+                    Virat Kohli showcased his class with a magnificent century
+                    that put India in a commanding position. His technical
+                    brilliance and mental fortitude were on full display...
+                  </p>
+                  <a href="#" class="read-more">Read More →</a>
+                </div>
+              </div>
+
+              <!-- News 2 -->
+              <div class="card news-card">
+                <div class="news-content">
+                  <div class="news-meta">
+                    <span class="news-category">PREVIEW</span>
+                    <span class="news-time">8 min read</span>
+                  </div>
+                  <h3 class="news-title">
+                    T20 World Cup 2024: Teams to Watch Out For
+                  </h3>
+                  <p class="news-summary">
+                    As the T20 World Cup approaches, we analyze the strongest
+                    contenders and dark horses. From established powerhouses to
+                    emerging cricket nations...
+                  </p>
+                  <a href="#" class="read-more">Read More →</a>
+                </div>
+                <div class="news-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop"
+                    alt="Cricket news"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Coming Soon Section -->
+          <section class="section">
+            <div class="card" style="text-align: center">
+              <h3
+                style="
+                  color: white;
+                  font-size: 24px;
+                  font-weight: bold;
+                  margin-bottom: 16px;
+                "
+              >
+                More Features Coming Soon
+              </h3>
+              <div class="grid grid-3" style="margin-top: 24px">
+                <div style="color: #cccccc">
+                  <div style="font-size: 48px; margin-bottom: 8px">🏏</div>
+                  <h4
+                    style="color: white; font-weight: 600; margin-bottom: 8px"
+                  >
+                    Fantasy Leagues
+                  </h4>
+                  <p style="font-size: 14px">
+                    Create and join fantasy cricket leagues
+                  </p>
+                </div>
+                <div style="color: #cccccc">
+                  <div style="font-size: 48px; margin-bottom: 8px">📊</div>
+                  <h4
+                    style="color: white; font-weight: 600; margin-bottom: 8px"
+                  >
+                    Player Stats
+                  </h4>
+                  <p style="font-size: 14px">
+                    Comprehensive player statistics and analysis
+                  </p>
+                </div>
+                <div style="color: #cccccc">
+                  <div style="font-size: 48px; margin-bottom: 8px">🎯</div>
+                  <h4
+                    style="color: white; font-weight: 600; margin-bottom: 8px"
+                  >
+                    Match Predictions
+                  </h4>
+                  <p style="font-size: 14px">
+                    AI-powered match predictions and insights
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <!-- Auction Tab -->
+    <div id="auction" class="tab-content">
+      <div class="container">
+        <main class="main-content">
+          <!-- Page Header -->
+          <section class="hero">
+            <h1>Cricket <span class="brand">Auction</span></h1>
+            <p>
+              Build your dream team, join fantasy leagues, and compete with
+              cricket fans worldwide
+            </p>
+          </section>
+
+          <!-- Live Tournament Fantasy -->
+          <section class="section">
+            <div class="section-header">
+              <h2 class="section-title">Live Tournament Fantasy</h2>
+              <div
+                style="flex: 1; height: 1px; background-color: rgb(31, 41, 55)"
+              ></div>
+            </div>
+
+            <div class="card">
+              <div class="tab-list">
+                <button
+                  class="tab-trigger active"
+                  onclick="showAuctionTab('tournament')"
+                >
+                  Team of the Tournament
+                </button>
+                <button class="tab-trigger" onclick="showAuctionTab('match')">
+                  Team of the Match
+                </button>
+              </div>
+
+              <div
+                id="tournament-tab"
+                class="auction-tab-content"
+                style="display: block"
+              >
+                <div
+                  style="
+                    display: flex;
+                    justify-content: between;
+                    align-items: center;
+                    margin-bottom: 24px;
+                  "
+                >
+                  <h3 style="color: white; font-size: 20px; font-weight: bold">
+                    World Cup 2023 - Top Performers
+                  </h3>
+                  <span class="badge badge-green">Tournament Active</span>
+                </div>
+
+                <div class="grid grid-2">
+                  <div class="player-card">
+                    <div class="player-avatar">VK</div>
+                    <div class="player-info">
+                      <div class="player-name">Virat Kohli</div>
+                      <div class="player-role">Batsman • IND</div>
+                      <div class="player-stats">Points: 845 • 15.5 CR</div>
+                    </div>
+                    <button class="btn">Select</button>
+                  </div>
+
+                  <div class="player-card">
+                    <div class="player-avatar">JB</div>
+                    <div class="player-info">
+                      <div class="player-name">Jasprit Bumrah</div>
+                      <div class="player-role">Bowler • IND</div>
+                      <div class="player-stats">Points: 792 • 12.0 CR</div>
+                    </div>
+                    <button class="btn">Select</button>
+                  </div>
+
+                  <div class="player-card">
+                    <div class="player-avatar">JB</div>
+                    <div class="player-info">
+                      <div class="player-name">Jos Buttler</div>
+                      <div class="player-role">WK-Batsman • ENG</div>
+                      <div class="player-stats">Points: 756 • 10.5 CR</div>
+                    </div>
+                    <button class="btn">Select</button>
+                  </div>
+
+                  <div class="player-card">
+                    <div class="player-avatar">PC</div>
+                    <div class="player-info">
+                      <div class="player-name">Pat Cummins</div>
+                      <div class="player-role">All-Rounder • AUS</div>
+                      <div class="player-stats">Points: 698 • 11.5 CR</div>
+                    </div>
+                    <button class="btn">Select</button>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                id="match-tab"
+                class="auction-tab-content"
+                style="display: none"
+              >
+                <div
+                  style="
+                    display: flex;
+                    justify-content: between;
+                    align-items: center;
+                    margin-bottom: 24px;
+                  "
+                >
+                  <h3 style="color: white; font-size: 20px; font-weight: bold">
+                    IND vs AUS - 1st Test (Day 2)
+                  </h3>
+                  <span
+                    class="badge"
+                    style="background-color: #ff3c38; color: white"
+                    >Live Match</span
+                  >
+                </div>
+
+                <div class="player-card">
+                  <div class="player-avatar">RS</div>
+                  <div class="player-info">
+                    <div class="player-name">Rohit Sharma</div>
+                    <div class="player-role">Batsman • IND</div>
+                    <div class="player-stats">89* (67 balls) • 156 points</div>
+                  </div>
+                  <button class="btn">Add</button>
+                </div>
+
+                <div class="player-card">
+                  <div class="player-avatar">MS</div>
+                  <div class="player-info">
+                    <div class="player-name">Mohammed Shami</div>
+                    <div class="player-role">Bowler • IND</div>
+                    <div class="player-stats">4/32 (8.4 ov) • 134 points</div>
+                  </div>
+                  <button class="btn">Add</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Upcoming Tournaments -->
+          <section class="section">
+            <div class="section-header">
+              <h2 class="section-title">Upcoming Tournaments</h2>
+              <div
+                style="flex: 1; height: 1px; background-color: rgb(31, 41, 55)"
+              ></div>
+            </div>
+
+            <div class="grid grid-3">
+              <div class="card" style="overflow: hidden; padding: 0">
+                <img
+                  src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=400&h=200&fit=crop"
+                  alt="IPL 2024"
+                  style="width: 100%; height: 200px; object-fit: cover"
+                />
+                <div style="padding: 24px">
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      margin-bottom: 16px;
+                    "
+                  >
+                    <h3
+                      style="color: white; font-weight: bold; font-size: 20px"
+                    >
+                      IPL 2024
+                    </h3>
+                    <span class="badge badge-green">Registration Open</span>
+                  </div>
+                  <div style="color: #cccccc; margin-bottom: 24px">
+                    <div style="margin-bottom: 8px">📅 March 22, 2024</div>
+                    <div style="margin-bottom: 8px">
+                      👥 10 teams, 300 players
+                    </div>
+                    <div>💰 Budget: 100 CR</div>
+                  </div>
+                  <button class="btn" style="width: 100%">
+                    Join Tournament
+                  </button>
+                </div>
+              </div>
+
+              <div class="card" style="overflow: hidden; padding: 0">
+                <img
+                  src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=200&fit=crop"
+                  alt="T20 World Cup"
+                  style="width: 100%; height: 200px; object-fit: cover"
+                />
+                <div style="padding: 24px">
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      margin-bottom: 16px;
+                    "
+                  >
+                    <h3
+                      style="color: white; font-weight: bold; font-size: 20px"
+                    >
+                      T20 World Cup 2024
+                    </h3>
+                    <span class="badge badge-gray">Coming Soon</span>
+                  </div>
+                  <div style="color: #cccccc; margin-bottom: 24px">
+                    <div style="margin-bottom: 8px">📅 June 1, 2024</div>
+                    <div style="margin-bottom: 8px">
+                      👥 20 teams, 400 players
+                    </div>
+                    <div>💰 Budget: 50 CR</div>
+                  </div>
+                  <button class="btn btn-outline" style="width: 100%" disabled>
+                    Notify Me
+                  </button>
+                </div>
+              </div>
+
+              <div class="card" style="overflow: hidden; padding: 0">
+                <img
+                  src="https://images.unsplash.com/photo-1624526267942-ab0ff8a3e972?w=400&h=200&fit=crop"
+                  alt="The Hundred"
+                  style="width: 100%; height: 200px; object-fit: cover"
+                />
+                <div style="padding: 24px">
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      margin-bottom: 16px;
+                    "
+                  >
+                    <h3
+                      style="color: white; font-weight: bold; font-size: 20px"
+                    >
+                      The Hundred 2024
+                    </h3>
+                    <span class="badge badge-blue">Early Bird</span>
+                  </div>
+                  <div style="color: #cccccc; margin-bottom: 24px">
+                    <div style="margin-bottom: 8px">📅 July 15, 2024</div>
+                    <div style="margin-bottom: 8px">
+                      👥 8 teams, 200 players
+                    </div>
+                    <div>💰 Budget: 75 CR</div>
+                  </div>
+                  <button
+                    class="btn"
+                    style="width: 100%; background-color: #2563eb"
+                  >
+                    Early Registration
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Custom Auctions -->
+          <section class="section">
+            <div class="section-header">
+              <h2 class="section-title">Custom Auctions</h2>
+              <div
+                style="flex: 1; height: 1px; background-color: rgb(31, 41, 55)"
+              ></div>
+            </div>
+
+            <div class="grid grid-3">
+              <div class="card">
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 16px;
+                  "
+                >
+                  <h3 style="color: white; font-weight: bold; font-size: 18px">
+                    Friends Premier League
+                  </h3>
+                  <span class="badge badge-blue">Joining</span>
+                </div>
+                <div
+                  style="color: #cccccc; margin-bottom: 24px; font-size: 14px"
+                >
+                  <div style="margin-bottom: 8px">
+                    <span style="color: white">Host:</span> Raj Kumar
+                  </div>
+                  <div style="margin-bottom: 8px">
+                    <span style="color: white">Participants:</span> 8/10
+                  </div>
+                  <div style="margin-bottom: 8px">
+                    <span style="color: white">Budget:</span> 50 CR
+                  </div>
+                  <div>
+                    <span style="color: white">Status:</span> 2 days left
+                  </div>
+                </div>
+                <button class="btn" style="width: 100%">Join Auction</button>
+              </div>
+
+              <div class="card">
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 16px;
+                  "
+                >
+                  <h3 style="color: white; font-weight: bold; font-size: 18px">
+                    Office Cricket League
+                  </h3>
+                  <div>
+                    <span
+                      class="badge"
+                      style="
+                        background-color: #6b7280;
+                        color: white;
+                        margin-right: 8px;
+                      "
+                      >Private</span
+                    >
+                    <span class="badge badge-green">Live</span>
+                  </div>
+                </div>
+                <div
+                  style="color: #cccccc; margin-bottom: 24px; font-size: 14px"
+                >
+                  <div style="margin-bottom: 8px">
+                    <span style="color: white">Host:</span> Priya Sharma
+                  </div>
+                  <div style="margin-bottom: 8px">
+                    <span style="color: white">Participants:</span> 12/12
+                  </div>
+                  <div style="margin-bottom: 8px">
+                    <span style="color: white">Budget:</span> 30 CR
+                  </div>
+                  <div>
+                    <span style="color: white">Status:</span> Draft Started
+                  </div>
+                </div>
+                <button
+                  class="btn"
+                  style="width: 100%; background-color: #16a34a"
+                >
+                  Join Live Auction
+                </button>
+              </div>
+
+              <div class="card">
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 16px;
+                  "
+                >
+                  <h3 style="color: white; font-weight: bold; font-size: 18px">
+                    Weekend Warriors
+                  </h3>
+                  <span class="badge badge-blue">Joining</span>
+                </div>
+                <div
+                  style="color: #cccccc; margin-bottom: 24px; font-size: 14px"
+                >
+                  <div style="margin-bottom: 8px">
+                    <span style="color: white">Host:</span> Vikram Singh
+                  </div>
+                  <div style="margin-bottom: 8px">
+                    <span style="color: white">Participants:</span> 6/8
+                  </div>
+                  <div style="margin-bottom: 8px">
+                    <span style="color: white">Budget:</span> 75 CR
+                  </div>
+                  <div>
+                    <span style="color: white">Status:</span> 5 days left
+                  </div>
+                </div>
+                <button class="btn" style="width: 100%">Join Auction</button>
+              </div>
+            </div>
+
+            <!-- Host Custom Auction -->
+            <div class="card" style="text-align: center; margin-top: 32px">
+              <div style="font-size: 64px; margin-bottom: 16px">➕</div>
+              <h3
+                style="
+                  color: white;
+                  font-size: 24px;
+                  font-weight: bold;
+                  margin-bottom: 16px;
+                "
+              >
+                Host Your Own Auction
+              </h3>
+              <p
+                style="
+                  color: #cccccc;
+                  font-size: 18px;
+                  margin-bottom: 24px;
+                  max-width: 672px;
+                  margin-left: auto;
+                  margin-right: auto;
+                "
+              >
+                Create a custom auction with your friends. Set your own rules,
+                budget, teams, and player pool for the ultimate fantasy
+                experience.
+              </p>
+              <button class="btn" style="font-size: 18px; padding: 12px 32px">
+                Create Custom Auction
+              </button>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <!-- Fixtures Tab -->
+    <div id="fixtures" class="tab-content">
+      <div class="container">
+        <main class="main-content">
+          <section class="hero">
+            <h1>Cricket <span class="brand">Fixtures</span></h1>
+            <p>Upcoming series and match schedules from around the world</p>
+          </section>
+
+          <section class="section">
+            <div class="section-header">
+              <h2 class="section-title">Upcoming Series</h2>
+              <div
+                style="flex: 1; height: 1px; background-color: rgb(31, 41, 55)"
+              ></div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 24px">
+              <div class="card">
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 16px;
+                  "
+                >
+                  <h3 style="color: white; font-weight: bold; font-size: 20px">
+                    India Tour of Australia 2024
+                  </h3>
+                  <span class="badge badge-blue">Upcoming</span>
+                </div>
+                <div style="color: #cccccc; margin-bottom: 16px">
+                  <div style="margin-bottom: 8px">
+                    📅 March 15 - April 10, 2024
+                  </div>
+                  <div style="margin-bottom: 8px">🏏 5 Test Matches</div>
+                  <div>🏟️ Australia</div>
+                </div>
+                <p style="color: #cccccc; margin-bottom: 16px">
+                  The much-anticipated Border-Gavaskar Trophy returns as India
+                  looks to retain the trophy on Australian soil.
+                </p>
+                <button class="btn btn-outline">Set Reminder</button>
+              </div>
+
+              <div class="card">
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 16px;
+                  "
+                >
+                  <h3 style="color: white; font-weight: bold; font-size: 20px">
+                    IPL 2024
+                  </h3>
+                  <span class="badge badge-green">Starting Soon</span>
+                </div>
+                <div style="color: #cccccc; margin-bottom: 16px">
+                  <div style="margin-bottom: 8px">
+                    📅 March 22 - May 26, 2024
+                  </div>
+                  <div style="margin-bottom: 8px">
+                    🏏 74 League Matches + Playoffs
+                  </div>
+                  <div>🏟️ India</div>
+                </div>
+                <p style="color: #cccccc; margin-bottom: 16px">
+                  The biggest T20 league in the world returns with 10 teams
+                  competing for the championship.
+                </p>
+                <button class="btn">View Schedule</button>
+              </div>
+
+              <div class="card">
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 16px;
+                  "
+                >
+                  <h3 style="color: white; font-weight: bold; font-size: 20px">
+                    T20 World Cup 2024
+                  </h3>
+                  <span class="badge badge-gray">Later</span>
+                </div>
+                <div style="color: #cccccc; margin-bottom: 16px">
+                  <div style="margin-bottom: 8px">
+                    📅 June 1 - June 29, 2024
+                  </div>
+                  <div style="margin-bottom: 8px">🏏 48 Matches</div>
+                  <div>🏟️ USA & West Indies</div>
+                </div>
+                <p style="color: #cccccc; margin-bottom: 16px">
+                  The global T20 championship featuring 20 teams battling for
+                  cricket's most prestigious T20 title.
+                </p>
+                <button class="btn btn-outline">Notify Me</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Today's Matches -->
+          <section class="section">
+            <div class="section-header">
+              <h2 class="section-title">Today's Matches</h2>
+              <div
+                style="flex: 1; height: 1px; background-color: rgb(31, 41, 55)"
+              ></div>
+            </div>
+
+            <div class="grid grid-2">
+              <div class="card">
+                <div style="margin-bottom: 16px">
+                  <div
+                    style="
+                      color: #ff8c00;
+                      font-size: 14px;
+                      font-weight: 500;
+                      margin-bottom: 4px;
+                    "
+                  >
+                    1st Test • Day 3
+                  </div>
+                  <h3 style="color: white; font-weight: bold; font-size: 18px">
+                    IND vs AUS
+                  </h3>
+                </div>
+                <div style="margin-bottom: 16px">
+                  <div style="color: #cccccc; font-size: 14px">
+                    Adelaide Oval, Adelaide
+                  </div>
+                  <div style="color: #cccccc; font-size: 14px">9:30 AM IST</div>
+                </div>
+                <span
+                  class="badge"
+                  style="background-color: #16a34a; color: white"
+                  >Live</span
+                >
+              </div>
+
+              <div class="card">
+                <div style="margin-bottom: 16px">
+                  <div
+                    style="
+                      color: #ff8c00;
+                      font-size: 14px;
+                      font-weight: 500;
+                      margin-bottom: 4px;
+                    "
+                  >
+                    3rd T20I
+                  </div>
+                  <h3 style="color: white; font-weight: bold; font-size: 18px">
+                    ENG vs PAK
+                  </h3>
+                </div>
+                <div style="margin-bottom: 16px">
+                  <div style="color: #cccccc; font-size: 14px">
+                    Old Trafford, Manchester
+                  </div>
+                  <div style="color: #cccccc; font-size: 14px">6:30 PM IST</div>
+                </div>
+                <span class="badge badge-blue">Upcoming</span>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <!-- Blogs Tab -->
+    <div id="blogs" class="tab-content">
+      <div class="container">
+        <main class="main-content">
+          <section class="hero">
+            <h1>Cricket <span class="brand">Blogs</span></h1>
+            <p>
+              In-depth analysis, expert opinions, and the latest cricket
+              insights
+            </p>
+          </section>
+
+          <!-- Latest Articles -->
+          <section class="section">
+            <div class="section-header">
+              <h2 class="section-title">Latest Articles</h2>
+              <div
+                style="flex: 1; height: 1px; background-color: rgb(31, 41, 55)"
+              ></div>
+            </div>
+
+            <div
+              style="
+                display: flex;
+                gap: 24px;
+                overflow-x: auto;
+                padding-bottom: 16px;
+              "
+            >
+              <div
+                class="card"
+                style="min-width: 320px; padding: 0; overflow: hidden"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&h=200&fit=crop"
+                  alt="Article"
+                  style="width: 100%; height: 200px; object-fit: cover"
+                />
+                <div style="padding: 24px">
+                  <h3
+                    style="
+                      color: white;
+                      font-weight: bold;
+                      font-size: 18px;
+                      margin-bottom: 12px;
+                    "
+                  >
+                    Top 10 Cricket Moments of 2024
+                  </h3>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      gap: 16px;
+                      color: #cccccc;
+                      font-size: 14px;
+                      margin-bottom: 16px;
+                    "
+                  >
+                    <span>👤 Sachin Raj</span>
+                    <span>⏱️ 8 min</span>
+                    <span>👁️ 15.2K</span>
+                  </div>
+                  <a href="#" class="read-more">Read Article →</a>
+                </div>
+              </div>
+
+              <div
+                class="card"
+                style="min-width: 320px; padding: 0; overflow: hidden"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=200&fit=crop"
+                  alt="Article"
+                  style="width: 100%; height: 200px; object-fit: cover"
+                />
+                <div style="padding: 24px">
+                  <h3
+                    style="
+                      color: white;
+                      font-weight: bold;
+                      font-size: 18px;
+                      margin-bottom: 12px;
+                    "
+                  >
+                    Fantasy Cricket Strategy Guide
+                  </h3>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      gap: 16px;
+                      color: #cccccc;
+                      font-size: 14px;
+                      margin-bottom: 16px;
+                    "
+                  >
+                    <span>👤 Priya Sharma</span>
+                    <span>⏱️ 12 min</span>
+                    <span>👁️ 9.8K</span>
+                  </div>
+                  <a href="#" class="read-more">Read Article →</a>
+                </div>
+              </div>
+
+              <div
+                class="card"
+                style="min-width: 320px; padding: 0; overflow: hidden"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1624526267942-ab0ff8a3e972?w=300&h=200&fit=crop"
+                  alt="Article"
+                  style="width: 100%; height: 200px; object-fit: cover"
+                />
+                <div style="padding: 24px">
+                  <h3
+                    style="
+                      color: white;
+                      font-weight: bold;
+                      font-size: 18px;
+                      margin-bottom: 12px;
+                    "
+                  >
+                    World Cup 2024 Predictions
+                  </h3>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      gap: 16px;
+                      color: #cccccc;
+                      font-size: 14px;
+                      margin-bottom: 16px;
+                    "
+                  >
+                    <span>👤 Vikram Singh</span>
+                    <span>⏱️ 6 min</span>
+                    <span>👁️ 23.1K</span>
+                  </div>
+                  <a href="#" class="read-more">Read Article →</a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Featured Articles -->
+          <section class="section">
+            <div class="section-header">
+              <h2 class="section-title">Featured Articles</h2>
+              <div
+                style="flex: 1; height: 1px; background-color: rgb(31, 41, 55)"
+              ></div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 32px">
+              <div class="card news-card">
+                <div class="news-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=600&h=400&fit=crop"
+                    alt="Cricket analysis"
+                  />
+                </div>
+                <div class="news-content">
+                  <div class="news-meta">
+                    <span class="news-category">ANALYSIS</span>
+                    <span class="news-time">15 min read</span>
+                  </div>
+                  <h3 class="news-title">
+                    The Rise of T20 Cricket: How It Changed the Game Forever
+                  </h3>
+                  <p class="news-summary">
+                    From its inception in 2003 to becoming the most popular
+                    format, T20 cricket has revolutionized how we view the
+                    sport. This comprehensive analysis explores the format's
+                    impact...
+                  </p>
+                  <a href="#" class="read-more">Read More →</a>
+                </div>
+              </div>
+
+              <div class="card news-card">
+                <div class="news-content">
+                  <div class="news-meta">
+                    <span class="news-category">TECHNIQUE</span>
+                    <span class="news-time">12 min read</span>
+                  </div>
+                  <h3 class="news-title">
+                    Breaking Down the Perfect Cricket Shot: A Technical Analysis
+                  </h3>
+                  <p class="news-summary">
+                    Master coaches and former international players share their
+                    insights on what makes the perfect cricket shot. From grip
+                    to follow-through, we analyze the mechanics...
+                  </p>
+                  <a href="#" class="read-more">Read More →</a>
+                </div>
+                <div class="news-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop"
+                    alt="Cricket technique"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Coming Soon -->
+          <section class="section">
+            <div class="section-header">
+              <h2 class="section-title">Coming Soon</h2>
+              <div
+                style="flex: 1; height: 1px; background-color: rgb(31, 41, 55)"
+              ></div>
+            </div>
+
+            <div class="card" style="text-align: center">
+              <div style="font-size: 96px; margin-bottom: 24px">🎬</div>
+              <h3
+                style="
+                  color: white;
+                  font-size: 24px;
+                  font-weight: bold;
+                  margin-bottom: 16px;
+                "
+              >
+                Match Highlights
+              </h3>
+              <p
+                style="
+                  color: #cccccc;
+                  font-size: 18px;
+                  margin-bottom: 32px;
+                  max-width: 672px;
+                  margin-left: auto;
+                  margin-right: auto;
+                "
+              >
+                Get ready for exclusive match highlights, player interviews, and
+                behind-the-scenes content.
+              </p>
+
+              <div class="grid grid-3" style="margin-bottom: 32px">
+                <div style="color: #cccccc">
+                  <div style="font-size: 48px; margin-bottom: 8px">📹</div>
+                  <h4
+                    style="color: white; font-weight: 600; margin-bottom: 8px"
+                  >
+                    Match Highlights
+                  </h4>
+                  <p style="font-size: 14px">Best moments from every match</p>
+                </div>
+                <div style="color: #cccccc">
+                  <div style="font-size: 48px; margin-bottom: 8px">🎤</div>
+                  <h4
+                    style="color: white; font-weight: 600; margin-bottom: 8px"
+                  >
+                    Player Interviews
+                  </h4>
+                  <p style="font-size: 14px">
+                    Exclusive conversations with stars
+                  </p>
+                </div>
+                <div style="color: #cccccc">
+                  <div style="font-size: 48px; margin-bottom: 8px">🎯</div>
+                  <h4
+                    style="color: white; font-weight: 600; margin-bottom: 8px"
+                  >
+                    Analysis Videos
+                  </h4>
+                  <p style="font-size: 14px">Expert breakdowns and insights</p>
+                </div>
+              </div>
+
+              <button class="btn">Notify Me When Available</button>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <!-- Profile Tab -->
+    <div id="profile" class="tab-content">
+      <div class="container">
+        <main class="main-content">
+          <!-- Profile Header -->
+          <section class="section">
+            <div class="card">
+              <div class="profile-header">
+                <div class="profile-avatar">RK</div>
+                <div class="profile-info">
+                  <div class="profile-name">Rohit Kumar</div>
+                  <div class="profile-details">
+                    <div class="profile-detail">
+                      <span>📧</span>
+                      <span>rohit.kumar@email.com</span>
+                    </div>
+                    <div class="profile-detail">
+                      <span>📱</span>
+                      <span>+91 98765 43210</span>
+                    </div>
+                    <div class="profile-detail">
+                      <span>📍</span>
+                      <span>Mumbai, India</span>
+                    </div>
+                    <div class="profile-detail">
+                      <span>👥</span>
+                      <span>Member since Jan 2023</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn">Edit Profile</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Profile Tabs -->
+          <section class="section">
+            <div class="tab-list">
+              <button
+                class="tab-trigger active"
+                onclick="showProfileTab('following')"
+              >
+                Following
+              </button>
+              <button class="tab-trigger" onclick="showProfileTab('rankings')">
+                My Rankings
+              </button>
+              <button class="tab-trigger" onclick="showProfileTab('settings')">
+                Settings
+              </button>
+            </div>
+
+            <!-- Following Tab -->
+            <div
+              id="following-tab"
+              class="profile-tab-content"
+              style="display: block"
+            >
+              <div style="display: flex; flex-direction: column; gap: 32px">
+                <!-- Following Teams -->
+                <div class="card">
+                  <h3
+                    style="
+                      color: white;
+                      font-size: 20px;
+                      font-weight: bold;
+                      margin-bottom: 24px;
+                      display: flex;
+                      align-items: center;
+                      gap: 8px;
+                    "
+                  >
+                    <span style="font-size: 32px">🏏</span>
+                    Following Teams
+                  </h3>
+                  <div class="grid grid-3">
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        padding: 16px;
+                        background-color: rgb(31, 41, 55);
+                        border-radius: 8px;
+                      "
+                    >
+                      <span style="font-size: 32px">🇮🇳</span>
+                      <div style="flex: 1">
+                        <div style="color: white; font-weight: 600">India</div>
+                        <div style="color: #cccccc; font-size: 14px">
+                          45 matches watched
+                        </div>
+                      </div>
+                      <button
+                        class="btn btn-outline"
+                        style="font-size: 12px; padding: 4px 12px"
+                      >
+                        Unfollow
+                      </button>
+                    </div>
+
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        padding: 16px;
+                        background-color: rgb(31, 41, 55);
+                        border-radius: 8px;
+                      "
+                    >
+                      <span style="font-size: 32px">🇦🇺</span>
+                      <div style="flex: 1">
+                        <div style="color: white; font-weight: 600">
+                          Australia
+                        </div>
+                        <div style="color: #cccccc; font-size: 14px">
+                          32 matches watched
+                        </div>
+                      </div>
+                      <button
+                        class="btn btn-outline"
+                        style="font-size: 12px; padding: 4px 12px"
+                      >
+                        Unfollow
+                      </button>
+                    </div>
+
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        padding: 16px;
+                        background-color: rgb(31, 41, 55);
+                        border-radius: 8px;
+                      "
+                    >
+                      <span style="font-size: 32px">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+                      <div style="flex: 1">
+                        <div style="color: white; font-weight: 600">
+                          England
+                        </div>
+                        <div style="color: #cccccc; font-size: 14px">
+                          28 matches watched
+                        </div>
+                      </div>
+                      <button
+                        class="btn btn-outline"
+                        style="font-size: 12px; padding: 4px 12px"
+                      >
+                        Unfollow
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Following Players -->
+                <div class="card">
+                  <h3
+                    style="
+                      color: white;
+                      font-size: 20px;
+                      font-weight: bold;
+                      margin-bottom: 24px;
+                      display: flex;
+                      align-items: center;
+                      gap: 8px;
+                    "
+                  >
+                    <span style="font-size: 24px">⭐</span>
+                    Following Players
+                  </h3>
+                  <div class="grid grid-2">
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        padding: 16px;
+                        background-color: rgb(31, 41, 55);
+                        border-radius: 8px;
+                      "
+                    >
+                      <div
+                        style="
+                          width: 48px;
+                          height: 48px;
+                          border-radius: 50%;
+                          background-color: #ff3c38;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          color: white;
+                          font-weight: bold;
+                        "
+                      >
+                        VK
+                      </div>
+                      <div style="flex: 1">
+                        <div style="color: white; font-weight: 600">
+                          Virat Kohli
+                        </div>
+                        <div style="color: #cccccc; font-size: 14px">India</div>
+                      </div>
+                      <button
+                        class="btn btn-outline"
+                        style="font-size: 12px; padding: 4px 12px"
+                      >
+                        Unfollow
+                      </button>
+                    </div>
+
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        padding: 16px;
+                        background-color: rgb(31, 41, 55);
+                        border-radius: 8px;
+                      "
+                    >
+                      <div
+                        style="
+                          width: 48px;
+                          height: 48px;
+                          border-radius: 50%;
+                          background-color: #ff3c38;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          color: white;
+                          font-weight: bold;
+                        "
+                      >
+                        SS
+                      </div>
+                      <div style="flex: 1">
+                        <div style="color: white; font-weight: 600">
+                          Steve Smith
+                        </div>
+                        <div style="color: #cccccc; font-size: 14px">
+                          Australia
+                        </div>
+                      </div>
+                      <button
+                        class="btn btn-outline"
+                        style="font-size: 12px; padding: 4px 12px"
+                      >
+                        Unfollow
+                      </button>
+                    </div>
+
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        padding: 16px;
+                        background-color: rgb(31, 41, 55);
+                        border-radius: 8px;
+                      "
+                    >
+                      <div
+                        style="
+                          width: 48px;
+                          height: 48px;
+                          border-radius: 50%;
+                          background-color: #ff3c38;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          color: white;
+                          font-weight: bold;
+                        "
+                      >
+                        JB
+                      </div>
+                      <div style="flex: 1">
+                        <div style="color: white; font-weight: 600">
+                          Jos Buttler
+                        </div>
+                        <div style="color: #cccccc; font-size: 14px">
+                          England
+                        </div>
+                      </div>
+                      <button
+                        class="btn btn-outline"
+                        style="font-size: 12px; padding: 4px 12px"
+                      >
+                        Unfollow
+                      </button>
+                    </div>
+
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        padding: 16px;
+                        background-color: rgb(31, 41, 55);
+                        border-radius: 8px;
+                      "
+                    >
+                      <div
+                        style="
+                          width: 48px;
+                          height: 48px;
+                          border-radius: 50%;
+                          background-color: #ff3c38;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          color: white;
+                          font-weight: bold;
+                        "
+                      >
+                        BA
+                      </div>
+                      <div style="flex: 1">
+                        <div style="color: white; font-weight: 600">
+                          Babar Azam
+                        </div>
+                        <div style="color: #cccccc; font-size: 14px">
+                          Pakistan
+                        </div>
+                      </div>
+                      <button
+                        class="btn btn-outline"
+                        style="font-size: 12px; padding: 4px 12px"
+                      >
+                        Unfollow
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Rankings Tab -->
+            <div
+              id="rankings-tab"
+              class="profile-tab-content"
+              style="display: none"
+            >
+              <div class="grid grid-3">
+                <div class="card" style="text-align: center">
+                  <div style="font-size: 48px; margin-bottom: 16px">🏆</div>
+                  <h3
+                    style="
+                      color: white;
+                      font-weight: bold;
+                      font-size: 18px;
+                      margin-bottom: 8px;
+                    "
+                  >
+                    Fantasy Points
+                  </h3>
+                  <div
+                    style="
+                      color: #ff3c38;
+                      font-size: 32px;
+                      font-weight: bold;
+                      margin-bottom: 8px;
+                    "
+                  >
+                    #127
+                  </div>
+                  <div
+                    style="color: #cccccc; font-size: 14px; margin-bottom: 16px"
+                  >
+                    15,847 pts
+                  </div>
+                  <span
+                    class="badge"
+                    style="background-color: #eab308; color: white"
+                    >Gold</span
+                  >
+                </div>
+
+                <div class="card" style="text-align: center">
+                  <div style="font-size: 48px; margin-bottom: 16px">🏆</div>
+                  <h3
+                    style="
+                      color: white;
+                      font-weight: bold;
+                      font-size: 18px;
+                      margin-bottom: 8px;
+                    "
+                  >
+                    Prediction Accuracy
+                  </h3>
+                  <div
+                    style="
+                      color: #ff3c38;
+                      font-size: 32px;
+                      font-weight: bold;
+                      margin-bottom: 8px;
+                    "
+                  >
+                    #89
+                  </div>
+                  <div
+                    style="color: #cccccc; font-size: 14px; margin-bottom: 16px"
+                  >
+                    73.4%
+                  </div>
+                  <span
+                    class="badge"
+                    style="background-color: #9ca3af; color: white"
+                    >Silver</span
+                  >
+                </div>
+
+                <div class="card" style="text-align: center">
+                  <div style="font-size: 48px; margin-bottom: 16px">🏆</div>
+                  <h3
+                    style="
+                      color: white;
+                      font-weight: bold;
+                      font-size: 18px;
+                      margin-bottom: 8px;
+                    "
+                  >
+                    Community Engagement
+                  </h3>
+                  <div
+                    style="
+                      color: #ff3c38;
+                      font-size: 32px;
+                      font-weight: bold;
+                      margin-bottom: 8px;
+                    "
+                  >
+                    #45
+                  </div>
+                  <div
+                    style="color: #cccccc; font-size: 14px; margin-bottom: 16px"
+                  >
+                    892 interactions
+                  </div>
+                  <span
+                    class="badge"
+                    style="background-color: #6b7280; color: white"
+                    >Platinum</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div
+              id="settings-tab"
+              class="profile-tab-content"
+              style="display: none"
+            >
+              <div class="card">
+                <h3
+                  style="
+                    color: white;
+                    font-size: 20px;
+                    font-weight: bold;
+                    margin-bottom: 24px;
+                  "
+                >
+                  Preferences
+                </h3>
+                <div style="display: flex; flex-direction: column; gap: 24px">
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                    "
+                  >
+                    <div>
+                      <div style="color: white; font-weight: 500">
+                        No Ads Experience
+                      </div>
+                      <div style="color: #cccccc; font-size: 14px">
+                        Remove all advertisements from the platform
+                      </div>
+                    </div>
+                    <label
+                      style="
+                        position: relative;
+                        display: inline-block;
+                        width: 60px;
+                        height: 34px;
+                      "
+                    >
+                      <input
+                        type="checkbox"
+                        style="opacity: 0; width: 0; height: 0"
+                      />
+                      <span
+                        style="
+                          position: absolute;
+                          cursor: pointer;
+                          top: 0;
+                          left: 0;
+                          right: 0;
+                          bottom: 0;
+                          background-color: #ccc;
+                          transition: 0.4s;
+                          border-radius: 34px;
+                        "
+                      ></span>
+                    </label>
+                  </div>
+
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                    "
+                  >
+                    <div>
+                      <div style="color: white; font-weight: 500">
+                        Match Notifications
+                      </div>
+                      <div style="color: #cccccc; font-size: 14px">
+                        Get notified about matches from your followed teams
+                      </div>
+                    </div>
+                    <label
+                      style="
+                        position: relative;
+                        display: inline-block;
+                        width: 60px;
+                        height: 34px;
+                      "
+                    >
+                      <input
+                        type="checkbox"
+                        checked
+                        style="opacity: 0; width: 0; height: 0"
+                      />
+                      <span
+                        style="
+                          position: absolute;
+                          cursor: pointer;
+                          top: 0;
+                          left: 0;
+                          right: 0;
+                          bottom: 0;
+                          background-color: #ff3c38;
+                          transition: 0.4s;
+                          border-radius: 34px;
+                        "
+                      ></span>
+                    </label>
+                  </div>
+
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                    "
+                  >
+                    <div>
+                      <div style="color: white; font-weight: 500">
+                        Fantasy League Alerts
+                      </div>
+                      <div style="color: #cccccc; font-size: 14px">
+                        Notifications for fantasy league deadlines and results
+                      </div>
+                    </div>
+                    <label
+                      style="
+                        position: relative;
+                        display: inline-block;
+                        width: 60px;
+                        height: 34px;
+                      "
+                    >
+                      <input
+                        type="checkbox"
+                        checked
+                        style="opacity: 0; width: 0; height: 0"
+                      />
+                      <span
+                        style="
+                          position: absolute;
+                          cursor: pointer;
+                          top: 0;
+                          left: 0;
+                          right: 0;
+                          bottom: 0;
+                          background-color: #ff3c38;
+                          transition: 0.4s;
+                          border-radius: 34px;
+                        "
+                      ></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">C11</div>
+          <span style="color: white; font-weight: bold; font-size: 18px"
+            >CricNivesh11</span
+          >
+        </div>
+        <p class="footer-text">
+          © 2024 CricNivesh11. All rights reserved. Your ultimate cricket
+          companion.
+        </p>
+      </div>
+    </footer>
+
+    
+  </body>
+</html>

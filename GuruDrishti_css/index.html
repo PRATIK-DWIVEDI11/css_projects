@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Faculty Career Advancement System</title>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+  :root {
+    --lavender: #b497bd;
+    --light-orange: #ffb564;
+    --soft-yellow: #fff9c4;
+    --white: #ffffff;
+    --gray-dark: #4a4a4a;
+    --gray-light: #f5f5f5;
+    --font-family: "Poppins", sans-serif;
+    --shadow-soft: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: var(--font-family);
+    background: var(--white);
+    color: var(--gray-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  /* Navbar */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    height: 56px;
+    background-color: var(--lavender);
+    color: var(--white);
+    box-shadow: var(--shadow-soft);
+    user-select: none;
+  }
+  nav.tabs {
+    display: flex;
+    gap: 20px;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  nav.tabs button {
+    background: none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    padding: 8px 12px;
+    border-bottom: 3px solid transparent;
+    font-family: var(--font-family);
+  }
+  nav.tabs button.active,
+  nav.tabs button:hover {
+    border-bottom-color: var(--soft-yellow);
+    color: var(--soft-yellow);
+  }
+  button#logout-btn {
+    background-color: var(--light-orange);
+    border: none;
+    color: var(--gray-dark);
+    font-weight: 600;
+    cursor: pointer;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-family: var(--font-family);
+    transition: background-color 0.2s ease;
+  }
+  button#logout-btn:hover {
+    background-color: #e0a64b;
+  }
+  main {
+    max-width: 1200px;
+    margin: 24px auto 48px;
+    padding: 0 16px;
+    flex-grow: 1;
+    display: none;
+  }
+  main.active {
+    display: block;
+  }
+  h1.page-title {
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 32px;
+    color: var(--lavender);
+    user-select: none;
+  }
+  /* Cards - Dashboard */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  .summary-card {
+    background-color: var(--soft-yellow);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-soft);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    user-select: none;
+    color: var(--gray-dark);
+  }
+  .summary-card.lavender {
+    background-color: var(--lavender);
+    color: var(--white);
+  }
+  .summary-card.orange {
+    background-color: var(--light-orange);
+    color: rgba(58,47,26,0.9);
+  }
+  .summary-card .icon {
+    font-size: 28px;
+    line-height: 1;
+  }
+  .summary-card .label {
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #555;
+  }
+  .summary-card .value {
+    font-weight: 700;
+    font-size: 28px;
+  }
+  /* Bottom grid */
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr;
+    gap: 24px;
+    align-items: start;
+  }
+  /* Chart container dashboard */
+  .chart-container {
+    background: var(--gray-light);
+    border-radius: var(--border-radius);
+    padding: 24px;
+    box-shadow: var(--shadow-soft);
+  }
+  .chart-container h2 {
+    margin: 0 0 16px;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--lavender);
+    user-select: none;
+  }
+  /* AI suggestion card */
+  .ai-suggestion {
+    background-color: var(--light-orange);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--shadow-soft);
+    font-weight: 600;
+    font-size: 16px;
+    color: #3a2f1a;
+    text-align: center;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px;
+  }
+  /* Collapsible sections (appraisal form) */
+  .collapsible-section {
+    border: 1px solid var(--lavender);
+    border-radius: var(--border-radius);
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+  .collapsible-header {
+    background-color: var(--lavender);
+    color: var(--white);
+    padding: 14px 20px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+  }
+  .collapsible-header .arrow {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+  }
+  .collapsible-content {
+    background: var(--white);
+    padding: 20px;
+    max-height: 2000px;
+    transition: max-height 0.4s ease;
+  }
+  .collapsible-content.closed {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+  }
+  form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    user-select: none;
+  }
+  form input[type=text],
+  form input[type=email],
+  form input[type=number],
+  form input[type=date],
+  form textarea,
+  form input[type=file] {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--lavender);
+    border-radius: 8px;
+    font-family: var(--font-family);
+    font-size: 14px;
+    resize: vertical;
+    margin-bottom: 20px;
+    color: var(--gray-dark);
+  }
+  form textarea {
+    min-height: 80px;
+  }
+  /* Buttons */
+  .button-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  button.btn-primary,
+  button.btn-secondary {
+    background-color: var(--lavender);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 12px 28px;
+    cursor: pointer;
+    font-family: var(--font-family);
+    user-select: none;
+    transition: background-color 0.3s ease;
+  }
+  button.btn-primary:hover,
+  button.btn-secondary:hover {
+    background-color: #9772a6;
+  }
+  button.btn-secondary {
+    background-color: var(--light-orange);
+    color: var(--gray-dark);
+  }
+  button.btn-secondary:hover {
+    background-color: #e0a64b;
+  }
+  /* Event Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: var(--shadow-soft);
+    font-family: var(--font-family);
+  }
+  thead {
+    background-color: var(--lavender);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 14px;
+    user-select: none;
+  }
+  th, td {
+    padding: 12px 10px;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--lavender);
+  }
+  th[aria-sort="ascending"]::after {
+    content: ' ▲';
+  }
+  th[aria-sort="descending"]::after {
+    content: ' ▼';
+  }
+  tbody tr:nth-child(even) {
+    background-color: var(--gray-light);
+  }
+  tbody tr:hover {
+    background-color: #f0f0f0;
+  }
+  /* Add new event button */
+  button#add-event-btn {
+    background-color: var(--light-orange);
+    border: none;
+    border-radius: 8px;
+    color: var(--gray-dark);
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font-family);
+    margin-bottom: 16px;
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+  }
+  button#add-event-btn:hover {
+    background-color: #e0a64b;
+  }
+  /* Modal */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family);
+  }
+  .modal {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    max-width: 480px;
+    width: 90%;
+    padding: 24px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .modal h2 {
+    margin: 0 0 12px;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--lavender);
+    user-select: none;
+  }
+  .modal .modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    user-select: none;
+  }
+  button.modal-cancel,
+  button.modal-add {
+    padding: 10px 20px;
+    font-weight: 700;
+    font-family: var(--font-family);
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    user-select: none;
+    transition: background-color 0.2s ease;
+  }
+  button.modal-cancel {
+    background-color: var(--lavender);
+    color: var(--white);
+  }
+  button.modal-cancel:hover {
+    background-color: #9772a6;
+  }
+  button.modal-add {
+    background-color: var(--light-orange);
+    color: var(--gray-dark);
+  }
+  button.modal-add:hover {
+    background-color: #e0a64b;
+  }
+  /* Admin table buttons */
+  .admin-btn {
+    background-color: var(--soft-yellow);
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: var(--font-family);
+    user-select: none;
+    color: var(--gray-dark);
+  }
+  .admin-btn.download {
+    background-color: var(--light-orange);
+  }
+  .admin-btn:hover {
+    filter: brightness(0.9);
+  }
+  .admin-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+  }
+  /* Visually hidden for a11y */
+  .visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    border: 0 !important;
+  }
+  /* Responsive */
+  @media (max-width: 900px) {
+    main {
+      margin: 16px 12px 40px;
+    }
+    .bottom-grid {
+      grid-template-columns: 1fr !important;
+    }
+    nav.tabs {
+      flex-wrap: wrap;
+    }
+  }
+</style>
+</head>
+<body>
+    <header>
+        <nav class="tabs" role="tablist" aria-label="Primary navigation tabs">
+          <button role="tab" aria-selected="true" id="tab-dashboard" aria-controls="dashboard" class="active">Dashboard</button>
+          <button role="tab" aria-selected="false" id="tab-profile" aria-controls="profile">My Profile</button>
+          <button role="tab" aria-selected="false" id="tab-appraisal" aria-controls="appraisal">Appraisal Form</button>
+          <button role="tab" aria-selected="false" id="tab-events" aria-controls="events">Events</button>
+          <button role="tab" aria-selected="false" id="tab-projects" aria-controls="projects">Projects</button>
+          <button role="tab" aria-selected="false" id="tab-lectures" aria-controls="lectures">Lectures</button>
+          <button role="tab" aria-selected="false" id="tab-admin" aria-controls="admin">Admin Panel</button>
+          <button id="logout-btn" type="button" aria-label="Logout">Logout</button>
+        </nav>
+      </header
+
+      <main id="dashboard-page" role="tabpanel" aria-labelledby="tab-dashboard" tabindex="0">
+        <h1 class="page-title">Dashboard</h1>
+        <section class="card-grid" aria-label="Summary Cards">
+          <article class="summary-card soft-yellow" aria-label="Total Research Papers">
+            <div class="icon papers" aria-hidden="true">📄</div>
+            <div class="label">Total Research Papers</div>
+            <div class="value">34</div>
+          </article>
+          <article class="summary-card lavender" aria-label="Events Attended">
+            <div class="icon events" aria-hidden="true">📅</div>
+            <div class="label">Events Attended</div>
+            <div class="value">18</div>
+          </article>
+          <article class="summary-card orange" aria-label="Lectures Given">
+            <div class="icon lectures" aria-hidden="true">🎤</div>
+            <div class="label">Lectures Given</div>
+            <div class="value">12</div>
+          </article>
+          <article class="summary-card soft-yellow" aria-label="Projects Completed">
+            <div class="icon projects" aria-hidden="true">📊</div>
+            <div class="label">Projects Completed</div>
+            <div class="value">7</div>
+          </article>
+        </section>
+        <section class="bottom-grid">
+          <section class="chart-container" aria-label="Month-wise activity line chart">
+            <h2>Monthly Activity</h2>
+            <!-- Placeholder box for chart -->
+            <div style="width:100%;height:320px;background:#e7d9f0;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#6a4a81;">
+              Line Chart Placeholder
+            </div>
+          </section>
+          <aside class="ai-suggestion" role="complementary" aria-label="AI suggestion">
+            💡 Consider publishing more papers this semester to enhance your profile.
+          </aside>
+        </section>
+      </main>
+<main id="profile" role="tabpanel" tabindex="0" aria-labelledby="tab-profile">
+  <h1 class="page-title">My Profile</h1>
+  <section aria-label="Profile details" style="max-width:700px; border:1px solid var(--lavender); border-radius:12px; padding:24px; box-shadow: var(--shadow-soft);">
+    <p><strong>Name:</strong> Dr. Jane Doe</p>
+    <p><strong>Employee Code:</strong> F0001</p>
+    <p><strong>Email:</strong> jane.doe@university.edu</p>
+    <p><strong>Department:</strong> Computer Science</p>
+    <p><strong>Position:</strong> Associate Professor</p>
+  </section>
+</main>
+
+<main id="appraisal" role="tabpanel" tabindex="0" aria-labelledby="tab-appraisal">
+  <h1 class="page-title">Self-Appraisal Form</h1>
+  <form id="appraisal-form" novalidate>
+    <section class="collapsible-section">
+      <button type="button" class="collapsible-header" aria-expanded="true" aria-controls="personalInfoContent">
+        Personal Info <span class="arrow">▼</span>
+      </button>
+      <div id="personalInfoContent" class="collapsible-content">
+        <label for="nameInput">Full Name <span aria-hidden="true" style="color:red;">*</span></label>
+        <input type="text" id="nameInput" name="name" required autocomplete="name" />
+        <label for="empCodeInput">Employee Code <span aria-hidden="true" style="color:red;">*</span></label>
+        <input type="text" id="empCodeInput" name="empCode" required />
+        <label for="emailInput">Email <span aria-hidden="true" style="color:red;">*</span></label>
+        <input type="email" id="emailInput" name="email" required autocomplete="email" />
+        <label for="departmentInput">Department <span aria-hidden="true" style="color:red;">*</span></label>
+        <input type="text" id="departmentInput" name="department" required />
+      </div>
+    </section>
+
+    <section class="collapsible-section">
+      <button type="button" class="collapsible-header" aria-expanded="false" aria-controls="researchContent">
+        Research <span class="arrow">▼</span>
+      </button>
+      <div id="researchContent" class="collapsible-content closed">
+        <label for="papersInput">Research Papers Published</label>
+        <input type="number" id="papersInput" name="papers" min="0" />
+        <label for="journalsInput">Journals Published</label>
+        <input type="number" id="journalsInput" name="journals" min="0" />
+        <label for="conferencesInput">Conferences Attended</label>
+        <input type="number" id="conferencesInput" name="conferences" min="0" />
+      </div>
+    </section>
+
+    <section class="collapsible-section">
+      <button type="button" class="collapsible-header" aria-expanded="false" aria-controls="projectsContent">
+        Projects <span class="arrow">▼</span>
+      </button>
+      <div id="projectsContent" class="collapsible-content closed">
+        <label for="ongoingInput">Ongoing Projects</label>
+        <input type="number" id="ongoingInput" name="ongoing" min="0" />
+        <label for="completedInput">Completed Projects</label>
+        <input type="number" id="completedInput" name="completed" min="0" />
+      </div>
+    </section>
+
+    <section class="collapsible-section">
+      <button type="button" class="collapsible-header" aria-expanded="false" aria-controls="seminarsContent">
+        Seminars <span class="arrow">▼</span>
+      </button>
+      <div id="seminarsContent" class="collapsible-content closed">
+        <label for="seminarsAttendedInput">Seminars Attended</label>
+        <input type="number" id="seminarsAttendedInput" name="seminarsAttended" min="0" />
+        <label for="seminarsConductedInput">Seminars Conducted</label>
+        <input type="number" id="seminarsConductedInput" name="seminarsConducted" min="0" />
+      </div>
+    </section>
+
+    <section class="collapsible-section">
+      <button type="button" class="collapsible-header" aria-expanded="false" aria-controls="certificatesContent">
+        Upload Certificates <span class="arrow">▼</span>
+      </button>
+      <div id="certificatesContent" class="collapsible-content closed">
+        <label for="certificatesInput">Attach Certificates (PDF, JPG, PNG)</label>
+        <input type="file" id="certificatesInput" name="certificates" accept=".pdf,image/jpeg,image/png" multiple />
+        <small>You can upload multiple files.</small>
+        <p id="fileCount" style="font-size: 14px; margin-top: 6px;"></p>
+      </div>
+    </section>
+    <div class="button-row">
+      <button type="submit" class="btn-primary">Submit</button>
+      <button type="reset" class="btn-secondary">Reset</button>
+    </div>
+  </form>
+</main>
+
+<main id="events" role="tabpanel" tabindex="0" aria-labelledby="tab-events">
+  <h1 class="page-title">Event Logging</h1>
+  <table aria-describedby="eventTableDesc" role="table">
+    <caption id="eventTableDesc" class="visually-hidden">Table of past logged events sorted by date</caption>
+    <thead>
+      <tr>
+        <th scope="col" role="button" tabindex="0" aria-sort="descending" data-key="date">Date</th>
+        <th scope="col" role="button" tabindex="0" aria-sort="none" data-key="title">Title</th>
+        <th scope="col" role="button" tabindex="0" aria-sort="none" data-key="role">Role</th>
+        <th scope="col" role="button" tabindex="0" aria-sort="none" data-key="description">Description</th>
+      </tr>
+    </thead>
+    <tbody id="events-tbody"></tbody>
+  </table>
+</main>
+
+<main id="projects" role="tabpanel" tabindex="0" aria-labelledby="tab-projects">
+  <h1 class="page-title">Projects</h1>
+  <p>Projects listing and management coming soon.</p>
+</main>
+
+<main id="lectures" role="tabpanel" tabindex="0" aria-labelledby="tab-lectures">
+  <h1 class="page-title">Lectures</h1>
+  <p>Lectures listing and management coming soon.</p>
+</main>
+
+<main id="admin" role="tabpanel" tabindex="0" aria-labelledby="tab-admin">
+  <h1 class="page-title">Admin Panel</h1>
+  <fieldset class="filters" aria-label="Filters">
+    <legend>Filters</legend>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+      <div style="flex:1 1 200px;">
+        <label for="filterName">Name</label>
+        <input type="text" id="filterName" autocomplete="off" placeholder="Filter by name" />
+      </div>
+      <div style="flex:1 1 200px;">
+        <label for="filterEmpCode">Employee Code</label>
+        <input type="text" id="filterEmpCode" autocomplete="off" placeholder="Filter by employee code" />
+      </div>
+      <div style="flex:1 1 200px;">
+        <label for="filterDate">Date</label>
+        <input type="date" id="filterDate" />
+      </div>
+    </div>
+  </fieldset>
+  <table aria-describedby="adminTableDesc" role="table" style="margin-top:10px;">
+    <caption id="adminTableDesc" class="visually-hidden">Table of all faculty submissions</caption>
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Employee Code</th>
+        <th scope="col">Date</th>
+        <th scope="col" style="text-align:center;">Actions</th>
+      </tr>
+    </thead>
+    <tbody id="adminTbody"></tbody>
+  </table>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  (() => {
+    // Tab management
+    const tabs = document.querySelectorAll('nav.tabs button[role="tab"]');
+    const pages = Array.from(document.querySelectorAll('main[role="tabpanel"]'));
+    const logoutBtn = document.getElementById('logout-btn');
+
+    function activateTab(selectedTab) {
+      tabs.forEach(tab => {
+        const isSelected = tab === selectedTab;
+        tab.setAttribute('aria-selected', isSelected);
+        tab.classList.toggle('active', isSelected);
+        tab.tabIndex = isSelected ? 0 : -1;
+      });
+      pages.forEach(page => {
+        page.classList.toggle('active', page.id === selectedTab.getAttribute('aria-controls'));
+      });
+      if(selectedTab.getAttribute('aria-controls') === 'appraisal') {
+        // Reset appraisal form collapsibles
+        resetCollapsibles();
+      }
+    }
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => activateTab(tab));
+    });
+
+    logoutBtn.addEventListener('click', () => {
+      if(confirm('Are you sure you want to logout?')) {
+        alert('You have been logged out.');
+        activateTab(document.getElementById('tab-dashboard'));
+      }
+    });
+
+    activateTab(document.getElementById('tab-dashboard'));
+
+    // Collapsible functionality for appraisal form
+    const collHeaders = document.querySelectorAll('.collapsible-header');
+    function resetCollapsibles(){
+      collHeaders.forEach(ch => {
+        ch.setAttribute('aria-expanded', 'false');
+        ch.querySelector('.arrow').style.transform = 'rotate(0deg)';
+        const content = document.getElementById(ch.getAttribute('aria-controls'));
+        content.classList.add('closed');
+      });
+      // Open the first by default
+      if(collHeaders.length > 0){
+        collHeaders[0].setAttribute('aria-expanded', 'true');
+        collHeaders[0].querySelector('.arrow').style.transform = 'rotate(180deg)';
+        const firstContent = document.getElementById(collHeaders[0].getAttribute('aria-controls'));
+        firstContent.classList.remove('closed');
+      }
+    }
+    collHeaders.forEach(hdr => {
+      hdr.addEventListener('click', () => {
+        let expanded = hdr.getAttribute('aria-expanded') === 'true';
+        hdr.setAttribute('aria-expanded', !expanded);
+        hdr.querySelector('.arrow').style.transform = !expanded ? 'rotate(180deg)' : 'rotate(0deg)';
+        const content = document.getElementById(hdr.getAttribute('aria-controls'));
+        if(expanded) {
+          content.classList.add('closed');
+        } else {
+          content.classList.remove('closed');
+        }
+      });
+    });
+
+    // Appraisal form submit & reset
+    const appraisalForm = document.getElementById('appraisal-form');
+    const certificatesInput = document.getElementById('certificatesInput');
+    const fileCountDisplay = document.getElementById('fileCount');
+
+    certificatesInput.addEventListener('change', () => {
+      const count = certificatesInput.files.length;
+      fileCountDisplay.textContent = count > 0 ? count + ' file(s) selected.' : '';
+    });
+
+    appraisalForm.addEventListener('submit', e => {
+      e.preventDefault();
+      if(!appraisalForm.checkValidity()) {
+        appraisalForm.reportValidity();
+        return;
+      }
+      alert("Self-Appraisal Form submitted!");
+      appraisalForm.reset();
+      fileCountDisplay.textContent = '';
+    });
+    appraisalForm.addEventListener('reset', () => {
+      fileCountDisplay.textContent = '';
+    });
+
+    // Events sorting and rendering
+    let events = [
+      {id:1, date:'2024-04-12', title:'International AI Conference', role:'Speaker', description:'Presented paper on machine learning applications.'},
+      {id:2, date:'2024-03-05', title:'Faculty Research Meetup', role:'Attendee', description:'Networking with other researchers.'},
+      {id:3, date:'2024-02-20', title:'Seminar on Data Privacy', role:'Organizer', description:'Organized seminar for awareness on GDPR.'}
+    ];
+    const eventsTbody = document.getElementById('events-tbody');
+    const eventsTableHead = document.querySelector('#events thead');
+    let sortConfig = {column:'date', direction:'desc'};
+
+    function renderEvents() {
+      eventsTbody.innerHTML = '';
+      const sorted = events.slice().sort((a,b) => {
+        let aVal = a[sortConfig.column];
+        let bVal = b[sortConfig.column];
+        if(sortConfig.column === 'date'){
+          return sortConfig.direction === 'asc' ? new Date(aVal) - new Date(bVal) : new Date(bVal) - new Date(aVal);
+        }
+        if(typeof aVal === 'string') {
+          return sortConfig.direction === 'asc' ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+        }
+        return 0;
+      });
+      for(const ev of sorted) {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${ev.date}</td>
+          <td>${ev.title}</td>
+          <td>${ev.role}</td>
+          <td>${ev.description}</td>
+        `;
+        eventsTbody.appendChild(tr);
+      }
+      // Update ARIA sort
+      eventsTableHead.querySelectorAll('th[role="button"]').forEach(th => {
+        const key = th.dataset.key;
+        if(key === sortConfig.column){
+          th.setAttribute('aria-sort', sortConfig.direction === 'asc' ? 'ascending' : 'descending');
+        } else {
+          th.setAttribute('aria-sort', 'none');
+        }
+      });
+    }
+    eventsTableHead.querySelectorAll('th[role="button"]').forEach(th => {
+      th.addEventListener('click', () => {
+        if(sortConfig.column === th.dataset.key){
+          sortConfig.direction = sortConfig.direction === 'asc' ? 'desc' : 'asc';
+        } else {
+          sortConfig.column = th.dataset.key;
+          sortConfig.direction = 'asc';
+        }
+        renderEvents();
+      });
+      th.addEventListener('keydown', e => {
+        if(e.key === 'Enter') th.click();
+      });
+    });
+    renderEvents();
+
+    // Admin panel filter & table rendering
+    let submissions = [
+      {id: 1, name: "Dr. Susan Collins", empCode: "F1234", date: "2024-03-18"},
+      {id: 2, name: "Prof. Rajesh Kumar", empCode: "F5678", date: "2024-04-02"},
+      {id: 3, name: "Dr. Emily Zhang", empCode: "F9101", date: "2024-02-25"}
+    ];
+    const adminTbody = document.getElementById('adminTbody');
+    const filterName = document.getElementById('filterName');
+    const filterEmpCode = document.getElementById('filterEmpCode');
+    const filterDate = document.getElementById('filterDate');
+
+    function renderAdminTable(rows) {
+      adminTbody.innerHTML = '';
+      if(rows.length === 0) {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td colspan="4" style="text-align:center; font-style:italic; padding:16px;">No submissions match filters.</td>`;
+        adminTbody.appendChild(tr);
+        return;
+      }
+      rows.forEach(s => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${s.name}</td>
+          <td>${s.empCode}</td>
+          <td>${s.date}</td>
+          <td class="admin-actions">
+            <button class="admin-btn view-btn" type="button" aria-label="View submission for ${s.name}">👁️ View</button>
+            <button class="admin-btn download btn-download" type="button" aria-label="Download PDF of submission for ${s.name}">⬇️ Download</button>
+          </td>`;
+        tr.querySelector('.view-btn').onclick = () => alert(`Viewing submission of ${s.name} (${s.empCode}) on ${s.date}`);
+        tr.querySelector('.download').onclick = () => alert(`Downloading PDF Report for ${s.name} (${s.empCode})`);
+        adminTbody.appendChild(tr);
+      })
+    }
+    function filterSubmissions() {
+      const n = filterName.value.trim().toLowerCase();
+      const c = filterEmpCode.value.trim().toLowerCase();
+      const d = filterDate.value;
+      const filtered = submissions.filter(s => {
+        return (!n || s.name.toLowerCase().includes(n)) &&
+        (!c || s.empCode.toLowerCase().includes(c)) &&
+        (!d || s.date === d);
+      });
+      renderAdminTable(filtered);
+    }
+    filterName.addEventListener('input', filterSubmissions);
+    filterEmpCode.addEventListener('input', filterSubmissions);
+    filterDate.addEventListener('input', filterSubmissions);
+    renderAdminTable(submissions);
+
+    // Chart.js line chart for dashboard
+    const ctx = document.getElementById('lineChart').getContext('2d');
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const monthlyContributions = [2,1,3,4,2,5,3,2,1,3,4,5];
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: months,
+        datasets: [{
+          label: 'Contributions',
+          data: monthlyContributions,
+          fill: false,
+          borderColor: getComputedStyle(document.documentElement).getPropertyValue('--light-orange').trim(),
+          backgroundColor: getComputedStyle(document.documentElement).getPropertyValue('--light-orange').trim(),
+          tension: 0.3,
+          pointRadius: 5,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            labels: { font: { family: "Poppins", size: 14 } }
+          },
+          tooltip: { mode: 'index', intersect: false }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: { font: { family: "Poppins" } },
+            grid: { color: 'rgba(0,0,0,0.05)' }
+          },
+          x: {
+            ticks: { font: { family: "Poppins" } },
+            grid: { color: 'rgba(0,0,0,0.05)' }
+          }
+        }
+      }
+    });
+  })();
+</script>
+</body>
+</html>
