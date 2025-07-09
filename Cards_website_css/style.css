@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    background: #3F5EFB;
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 
+.card{
+    width: 360px;
+    height: 600px;
+    background-color: pink;
+    border-radius: 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.card img{
+    height: 57%;
+    border-radius: 80px;
+}
+
+.card h2{
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+}
+
+.card p{
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: black;
+    text-align: center;
+} */
+
+.card{
+    width: 400px;
+    height: 600px;
+    background-color: pink;
+    border-radius: 20px;
+    /* padding: 20px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.card img{
+    width: 100%;
+    height: 30%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.textbox{
+    /* padding: 20px; */
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#manybox{
+    width: 80%;
+    height: 10%;
+    background-color: rgb(16, 112, 154);
+    border-radius: 10px;
+}
+
+#pay{
+    width: 80%;
+    height: 9%;
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 10px 90px rgba(0, 0, 0, 0.19),0px 6px 6px rgba(0, 0, 0, 0.23);
+    border: none;
+    cursor: pointer;
+}
+
+.cancel a{
+    text-decoration: none;
+    color: black;
+}
