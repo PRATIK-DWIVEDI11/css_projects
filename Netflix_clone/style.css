@@ -1,0 +1,46 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.main{
+  background-image: url("assests/finalbg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: max(1200px , 100vw);
+  height: 110vh;
+  position: relative;
+}
+
+.main .box{
+  height: 110vh;
+  width: 100%;
+  opacity: 0.76;
+  background-color: black;
+  position: absolute;
+  top: 0;
+}
+
+.nav{
+  max-width: 80vw;
+  height: 62px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.logo{
+  width: 9rem;
+  color: red;
+  position: relative;
+  z-index: 10;
+}
+
+.buttons{
+  display: flex;
+  gap: 1rem;
+  position: relative;
+  z-index: 10;
+}

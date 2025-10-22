@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+.head-container{
+    height: 100vh;
+    weight: 100vw;
+    background: linear-gradient(to bottom, red 0%, yellow 30%, rgb(112, 112, 242) 80%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* gap: 1rem; */
+}
+
+.card{
+    height: 425px;
+    width: 275px;
+    background: white;
+    border-radius: 1.15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    gap: 1rem;
+    margin: 0.5rem;
+}
+
+.logo-section img{
+    width: 100%;
+    margin-top: 1.1rem;
+}
+
+.logo{
+    width: 100%;
+    height: 100%;
+}
+
+.main-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.year-content{
+    margin-top: 1rem;
+    width: 100%;
+    flex-grow: 1;
+    background-color: rgb(4, 7, 81);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.year-content h2{
+    font-size: 1.17rem;
+    text-align: center;
+    color: white;
+    margin: 0;
+}
+
+.profile-container{
+    margin-top: 1rem;
+    width: 28%;
+}
+
+
+.profile-container img{
+    width: 100%;
+    height: 100%;
+    border: solid 1px black;
+}
+
+.profile{
+    width: 100%;
+    height: 100%;
+}
+
+.info-container h3{
+    margin-top: 0;
+    width: 100%;
+    padding-left: 1rem;
+    font-size: 0.8rem;
+    text-align: start;
+    padding: 0.25rem;
+}
+
+.sign-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-img{
+    margin-top: 1rem;
+    width: 28%;
+}
+
+.sign-img img{
+    height: 20px;
+    border: solid 1px black;
+    align-items: center;
+}
+
+.sign-text p{
+    margin-top: 0;
+    width: 100%;
+    padding-left: 1rem;
+    text-align: center;
+    padding: 0.25rem;
+}
+
+.sign{
+    width: 100%;
+    height: 100%;
+    font-size: 0.56rem;
+    text-align: center;
+}
+
+.footer-container{
+    width: 100%;
+    flex-grow: 1;
+    background-color: rgb(4, 7, 81);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.footer{
+    width: 90%;
+    font-size: 0.63rem;
+    text-align: center;
+    color: white;
+    margin: 0;
+}
